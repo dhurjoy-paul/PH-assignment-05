@@ -1,7 +1,7 @@
 // toggle button code
 const btnIndex = document.getElementById("btn_index");
 btnIndex.addEventListener("click", function () {
-  window.location.href = "/blog.html";
+  window.location.href = "./blog.html";
 });
 // ===================================================
 
