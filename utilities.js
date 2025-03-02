@@ -30,12 +30,13 @@ function setInnerTextByID(id, value) {
 
 function checkAllTasksCompleted() {
   const allBtn = document.querySelectorAll(".btn_completed");
-
   function checkAllDisabled(allBtn) {
-    const btnArray = Array.from(allBtn);
-    return btnArray.every(function (btn) {
-      return btn.disabled;
-    });
+    for (let i = 0; i < allBtn.length; i++) {
+      if (!allBtn[i].disabled) {
+        return false;
+      }
+    }
+    return true;
   }
   const allDisabled = checkAllDisabled(allBtn);
   if (allDisabled) {
