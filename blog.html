@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevBoard - Blogs </title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+  <!-- daisy ui -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" /> -->
+  <!-- tailwind css -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- custom styles -->
+  <style>
+    .font_poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .dashed_hr {
+      width: calc(100% + 48px);
+      border: none;
+      border-top: 2px dashed #d1d5db;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      margin-left: -24px;
+    }
+
+    code {
+      color: #555555;
+    }
+  </style>
+</head>
+
+<body class="font_poppins pt-6 min-h-screen text-[#00303c]" bgcolor="#f4f7ff">
+
+  <!-- nav bar -->
+  <section class="bg-white max-w-[1538px] min-h-[100px] mx-auto p-6 rounded-2xl mb-5">
+    <header class="flex justify-between items-center">
+      <!-- logo area -->
+      <div class="flex items-center gap-2">
+        <img class="w-full" src="./assets/logo.png" alt="DevBoard Logo">
+        <h1 class="text-4xl font-light mt-2">Dev<span class="font-bold">Board</span></h1>
+      </div>
+
+      <!-- nav right area -->
+      <div class="">
+        <button id="btn_blog" class="text-xl font-medium text-white bg-[#3752fd] px-[20px] py-[10px] rounded-lg cursor-pointer">Back to
+          Desk</button>
+      </div>
+    </header>
+  </section>
+
+  <!-- page title -->
+  <h2 class="text-[32px] font-bold text-center mt-8">Blogs</h2>
+
+  <!-- blogs -->
+  <section class="grid grid-cols-1 gap-6 max-w-[1536px] mt-6 mx-auto bg-[#f4f7ff] rounded-lg">
+
+    <!-- question 1 -->
+    <div class="bg-white p-6 rounded-xl">
+      <p class="text-xl font-bold">Question-1: What are the different ways to select an element in the DOM?</p>
+
+      <hr class="dashed_hr">
+
+      <p class="text-lg">Elements can be selected in the DOM by many ways. All are given below:
+      <p class="my-3 ml-6">
+        <code>document.getElementById(id)</code> <br>
+        <code>document.getElementsByTagName(tag)</code> <br>
+        <code>document.getElementsByClassName(class)</code> <br>
+        <code>document.querySelector(selector)</code> <br>
+        <code>document.querySelectorAll(selector)</code>
+      </p>
+      <p class="text-lg">But for selecting only one element should use below these. Because all these will return only
+        one element.</p>
+      <p class="my-3 ml-6">
+        <code>document.getElementById(id)</code> <span class="text-lg">or</span> <br>
+        <code>document.querySelector(selector)</code>
+      </p>
+      </p>
+    </div>
+    <!-- question 2 -->
+    <div class="bg-white p-6 rounded-xl">
+      <p class="text-xl font-bold">Question-2: What is the difference between innerHTML, innerText, and textContent ?
+      </p>
+      <hr class="dashed_hr">
+      <p class="text-lg"><code>textContent</code> can give all text of a selected element even if text is styled with
+        "<code>display: none</code>" means it ignores CSS styles. But <code>innerText</code> can't do that. It
+        prioritizes CSS styles. On the other hand, <code>innerHTML</code> will give full HTML markup of a selected
+        element, including its child elements and all their tags.</p>
+    </div>
+    <!-- question 3 -->
+    <div class="bg-white p-6 rounded-xl">
+      <p class="text-xl font-bold">Question-3: What is event delegation in the DOM?</p>
+      <hr class="dashed_hr">
+      <p class="text-lg">In the DOM, event delegation means assigning an event listener for children of a parent element
+        that event listener will assign on parent element but not in every child and for every new added child element
+        that event listener will also work.</p>
+    </div>
+    <!-- question 4 -->
+    <div class="bg-white p-6 rounded-xl">
+      <p class="text-xl font-bold">Question-4: What is event bubbling in the DOM?</p>
+      <hr class="dashed_hr">
+      <p class="text-lg">In the Document Object Model (DOM), Event bubbling is a process, of occurring events from down
+        to up means targeted element to its parent and its parent until it gets to the root element unless forcefully
+        stops. Event bubbling is event's natural flow.</p>
+    </div>
+    <!-- question 5 -->
+    <div class="bg-white p-6 rounded-xl">
+      <p class="text-xl font-bold">Question-5: How do you create, add, and remove elements using JavaScript?</p>
+      <hr class="dashed_hr">
+      <p class="text-lg"><i><u>Creating an element</u> :</i> I will create an element by
+        <code>document.createElement("tagName")</code> <br> <i><u>Adding that element</u> :</i> For adding an element I
+        will follow 3 steps: <br>
+      <ul class="text-lg ml-6 my-2">
+        <li>1) 1st I will store that element on a variable by
+          <code>const elementVar = document.createElement("tagName")</code>
+        </li>
+        <li>2) Then I will store the parent element on a different variable by its ID
+          <code>const parentVar = document.getElementById("id")</code>
+        </li>
+        <li>
+          3.1) Then I will write this <code>document.parentVar.appendChild(elementVar)</code> code to add that created
+          element on parent element as <u><i>"last child"</i></u>
+        </li>
+        <li>
+          3.2) If i have to add that element as first child then I will write this
+          <code>parentVar.insertBefore(elementVar, parentVar.firstElementChild)</code> code.
+        </li>
+      </ul>
+      </p>
+      <p class="text-lg">
+        <i><u>Removing that element</u> :</i> I can remove that element by using its var name. This method will remove
+        that element: <code>parentVar.removeChild(elementVar);</code>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // code to switch between blog and desk page
+    const btnBlog = document.getElementById('btn_blog');
+    btnBlog.addEventListener('click', () => {
+      window.location.href = './index.html';
+    });
+  </script>
+</body>
+
+</html>
